@@ -20,10 +20,21 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form>
-        <input type="text" name="firstName" onChange={event => this.handleFirstNameChange(event)} value={this.state.firstName} />
-        <input type="text" name="lastName" onChange={event => this.handleLastNameChange(event)} value={this.state.lastName} />
-      </form>
+       <div>
+        <form>
+          <input
+            type="text"
+            name="firstName"
+            onChange={event => this.props.handleChange(event)}
+            value={this.props.formData.firstName}
+          />
+          <input
+            type="text"
+            name="lastName"
+            onChange={event => this.props.handleChange(event)}
+            value={this.props.formData.lastName} />
+        </form>
+      </div>
     )
   }
 }
